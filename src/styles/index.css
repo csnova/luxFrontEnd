@@ -1,0 +1,951 @@
+/* Style for Whole Site */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--light-font-color);
+  background-color: var(--page-background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  margin: 0;
+
+  --page-background-color: #bfc9d9;
+  --bar-background-color: #7091c2;
+  --bar-border-color: #a6bad9;
+  --bar-shadow-color: #0e0e0e65;
+  --button-background-color: #3a3a3a;
+  --button-border-color: #272727;
+  --light-font-color: #ffffff;
+  --dark-font-color: #212121;
+  --table-header-color: #b6e7ce;
+  --light-table-color: #ffffff;
+  --dark-table-color: #f0f0f0;
+  --light-table-hover-color: #e4e4e4;
+  --dark-table-hover-color: #e2e2e2;
+  --form-background-color: #dee2e9;
+  --user-message-color: #718acf;
+  --friend-message-color: #c1c1c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+Link {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Style for  Top Bar*/
+.topBar {
+  display: flex;
+  border: 1px solid var(--bar-border-color);
+  background-color: var(--bar-background-color);
+  box-shadow: 0 3px 10px var(--bar-shadow-color);
+  margin: 0;
+}
+
+.topBar {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  width: 100vw;
+  min-width: 760px;
+  height: 7vh;
+  min-height: 70px;
+}
+
+.logoBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.title {
+  width: fit-content;
+  margin: 10px;
+}
+
+.title * {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.logo {
+  height: 50px;
+  margin: 10px;
+}
+
+.currentUserBox {
+  display: flex;
+  justify-content: end;
+}
+
+.signInUp {
+  display: flex;
+  flex-direction: row;
+}
+
+.currentUserButton,
+.signInButton {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+  text-decoration: none;
+}
+
+.currentUserButton:hover,
+.signInButton:hover {
+  background-color: var(--page-background-color);
+  color: var(--dark-font-color);
+}
+
+.searchBox {
+  margin-right: 50px;
+}
+
+.searchBox,
+.searchBoxInput,
+#userOptions {
+  width: 500px;
+}
+
+#userOptionsLink,
+#selectedUser {
+  width: 450px;
+}
+
+#userOptions {
+  position: absolute;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--button-border-color);
+  background-color: var(--form-background-color);
+  width: 500px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+/* Style for the Main Content on Every Page */
+.mainPage {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 590px;
+}
+
+.pageSpecificInfo,
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--dark-font-color);
+}
+
+.pageTitle {
+  text-align: center;
+  min-width: 740px;
+}
+
+/* Style for Sign in Message */
+.signInMessage,
+.signOutMessage,
+.deleteMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style for Home Page */
+.tableHeader {
+  text-align: center;
+}
+
+.headerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addIcon {
+  height: 20px;
+}
+
+.addButtonBox {
+  padding: 5px 10px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--button-background-color);
+  margin: 20px;
+  text-decoration: none;
+  color: var(--light-font-color);
+}
+
+.addButtonBox:hover {
+  background-color: var(--bar-background-color);
+  color: var(--font-color);
+}
+
+/* Style for Tables */
+.tableBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.genericTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 1000px;
+}
+
+.genericTable td,
+.genericTable th {
+  text-align: center;
+  border: 1px solid var(--bar-border-color);
+  padding: 15px;
+  height: 80px;
+}
+
+.genericTable tr:nth-child(even) {
+  background-color: var(--light-table-color);
+}
+
+.genericTable tr:nth-child(odd) {
+  background-color: var(--dark-table-color);
+}
+
+.genericTable tr:nth-child(even):hover {
+  background-color: var(--light-table-hover-color);
+}
+
+.genericTable tr:nth-child(odd):hover {
+  background-color: var(--dark-table-hover-color);
+}
+
+.genericTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: var(--table-header-color);
+  color: var(--font-color);
+}
+
+.tableIcon,
+#tableIcon {
+  height: 40px;
+}
+
+.tableIcon:hover,
+#tableIcon:hover {
+  height: 37px;
+}
+
+#userLink {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+  text-decoration: none;
+}
+
+#userLinkNoHover {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+  text-decoration: none;
+  pointer-events: none;
+}
+
+#userLink:hover {
+  background-color: var(--page-background-color);
+  color: var(--dark-font-color);
+}
+
+#userLink * {
+  text-decoration: none;
+  color: var(--light-font-color);
+}
+
+#userLinkNoHover * {
+  text-decoration: none;
+  color: var(--light-font-color);
+  pointer-events: none;
+}
+
+#userLink:hover * {
+  color: var(--dark-font-color);
+}
+
+.messageButton {
+  width: 150px;
+  text-align: center;
+  align-self: center;
+}
+
+/* Style for Sign in Form */
+.signInFormBox,
+.alreadySignedIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.signInForm {
+  width: 100%;
+  max-width: 800px;
+  flex: 1;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+input,
+textarea {
+  margin: 10px;
+  flex-grow: 1;
+  margin-left: 10px;
+  font-size: 18px;
+  background-color: var(--form-background-color);
+  color: var(--dark-font-color);
+  max-width: 680px;
+}
+
+.profileButton,
+.signOutButton,
+.deleteButton,
+.formSubmit {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+  text-decoration: none;
+}
+
+.deleteButton {
+  background-color: #962b2b;
+}
+
+.deleteButton:hover {
+  background-color: #b43030;
+}
+
+.profileButton:hover,
+.signOutButton:hover,
+.formSubmit:hover {
+  background-color: var(--bar-background-color);
+  color: var(--dark-font-color);
+}
+
+.formSubmit {
+  width: 100px;
+  flex-grow: 0;
+}
+
+/* Style for Thread Details Page */
+.threadPage {
+  height: 100%;
+}
+
+.threadDetailsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.threadTitle {
+  font-size: 32px;
+}
+
+.messageListBox {
+  outline: 1px solid var(--button-border-color);
+  border-radius: 5px;
+  max-width: 1200px;
+  min-width: 350px;
+  min-height: 350px;
+  max-height: 800px;
+  height: 80%;
+  width: 100%;
+  background-color: var(--light-table-hover-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.currentUserMessage,
+.messageBox {
+  outline: 1px solid var(--button-border-color);
+  border-radius: 5px;
+  max-width: 1000px;
+  min-width: 250px;
+  width: 80%;
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.currentUserMessage {
+  align-self: flex-end;
+  background-color: var(--user-message-color);
+}
+
+.messageBox {
+  align-self: flex-start;
+  background-color: var(--friend-message-color);
+}
+
+.currentUserMessage *,
+.messageBox * {
+  margin: 5px;
+  font-size: 18px;
+}
+
+.messageLowerBar {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  align-items: center;
+}
+
+/* Style for New message Form */
+.newMessageFormBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 740px;
+}
+
+.newMessageForm {
+  max-width: 1000px;
+  min-width: 740px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.formToBox {
+  display: flex;
+  flex-direction: column;
+}
+
+input.formTextInput,
+input.formToInput {
+  width: 875px;
+  padding: 3px;
+  flex-grow: 0;
+}
+
+#friendOptions {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--button-border-color);
+  background-color: var(--form-background-color);
+  width: 500px;
+  margin-left: 50px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+#selectedFriend {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+  text-decoration: none;
+}
+
+#selectedFriend:hover {
+  background-color: var(--bar-background-color);
+  color: var(--dark-font-color);
+}
+
+#selectedUser {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+  text-decoration: none;
+}
+
+#selectedUser:hover {
+  background-color: var(--bar-background-color);
+  color: var(--dark-font-color);
+}
+
+/* Style for User profile page */
+.profilePage {
+  display: flex;
+  width: 100%;
+}
+
+.profileSideBar {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid var(--button-border-color);
+}
+
+.userName {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.pictureBox {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bar-background-color);
+}
+
+.profilePicture {
+  object-position: center top;
+  object-fit: cover;
+  width: 200px;
+  max-height: 200px;
+  height: auto;
+  background-color: white;
+}
+
+.profileName {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.userInfo {
+  width: 100%;
+}
+
+.bioBox {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin: 0px 10px;
+  align-items: flex-start;
+}
+
+.bioText,
+.bioTitle {
+  margin: 0px;
+}
+
+.bioTitle {
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.followAndMessage {
+  border: 3px solid var(--button-border-color);
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#followButton,
+#messageButton {
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+}
+
+#followButton:hover,
+#messageButton:hover {
+  background-color: var(--bar-background-color);
+  color: var(--dark-font-color);
+}
+
+#followLink,
+#messageLink {
+  text-decoration: none;
+  color: var(--light-font-color);
+  display: block;
+  width: 100%;
+  line-height: 40px;
+}
+
+#followLink:hover,
+#messageLink:hover {
+  color: var(--dark-font-color);
+}
+
+.followingBox,
+.followersBox {
+  border: 3px solid var(--button-border-color);
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.followingTitle,
+.followersTitle {
+  margin: 0;
+}
+
+.followingList,
+.followersList {
+  margin: 0px;
+}
+
+#profileButton,
+#profileButtonNoHover {
+  width: 250px;
+  height: 40px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+}
+
+#profileButtonNoHover {
+  pointer-events: none;
+}
+
+#profileButton:hover {
+  background-color: var(--bar-background-color);
+  color: var(--dark-font-color);
+}
+
+#profileLink {
+  text-decoration: none;
+  color: var(--light-font-color);
+  display: block;
+  width: 100%;
+  line-height: 40px;
+}
+
+#profileLink:hover {
+  color: var(--dark-font-color);
+}
+
+.profileNewsFeed {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.allPosts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postBox,
+.postBoxNoHover {
+  width: 100%;
+  max-width: 1000px;
+  border: 3px solid var(--button-border-color);
+  border-radius: 10px;
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--form-background-color);
+  color: var(--dark-font-color);
+}
+
+.postBoxNoHover {
+  pointer-events: none;
+}
+
+.postBox:hover {
+  background-color: var(--friend-message-color);
+}
+
+#postLink {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: var(--dark-font-color);
+}
+
+#postTitleBox,
+#postTextBox {
+  display: flex;
+  justify-content: center;
+}
+
+#postBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+#postTime {
+  margin-left: 10px;
+}
+
+#userBar {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: 20px;
+}
+
+#postUser {
+  margin: 0;
+  padding: 0;
+}
+
+#likeBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+#likeIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.commentLink {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.commentLink:hover {
+  text-decoration: underline;
+  color: var(--user-message-color);
+}
+
+/* Style for Profile */
+.editIcon {
+  width: 25px;
+  height: auto;
+  margin-top: 5px;
+}
+
+.profileIcon {
+  margin: 0px 10px;
+}
+
+.noPosts {
+  text-align: center;
+}
+
+/* Style to Update Profile */
+.updateUserInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style for New Comment */
+.newCommentBox {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 20px;
+}
+
+.newMessageInput {
+  height: 100px;
+  margin: 0;
+}
+
+.newMessageButton {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--button-border-color);
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+}
+
+.newMessageButton:hover {
+  background-color: var(--user-message-color);
+  color: var(--dark-font-color);
+}
+
+/* Style for Post Specific Page */
+.postDetailCommentBox {
+  width: 100%;
+}
+
+.commentBox {
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+  border: 1px solid var(--button-border-color);
+  border-radius: 5px;
+  width: 500px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.commentUser {
+  font-weight: 700;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.timestampBox {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#commentUser {
+  padding: 0px;
+  margin: 10px;
+  min-width: 100px;
+  border: 1px solid var(--button-border-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: var(--bar-background-color);
+  color: var(--dark-font-color);
+  text-decoration: none;
+}
+
+#commentUser:hover {
+  background-color: var(--button-background-color);
+  color: var(--light-font-color);
+}
+
+#userCommentLink {
+  text-decoration: none;
+  color: var(--dark-font-color);
+  display: block;
+  width: 100%;
+  line-height: 30px;
+}
+
+#userCommentLink:hover {
+  color: var(--light-font-color);
+}
+
+/* New Post Style */
+.newPostFormBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
